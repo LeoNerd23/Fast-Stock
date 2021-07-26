@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="./js/script.js"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+
+  <title>Fast Stock</title>
+</head>
+
+<body onload="carregarTotalEstoque('totalEstoque')">
+  <header>
+    <div class="logo">
+      <a href="./index.html"><span>Fast Stock</span></a>
+    </div>
+    <div class="login">
+      <ul>
+        <li>Logar</li>
+        <li>Sair</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="entradas__container">
+    <div class="entradas">
+      <div class="entradas__info">
+        <span>
+          <i class="fa fa-truck"></i>
+        </span>
+        <p>Entradas cadastradas: <span id="totalEstoque">0</span></p>
+      </div>
+
+      <input type="button" value="Ver entradas" class="entradas__button"
+        onclick="window.open('verEstoque.html','_self')" />
+    </div>
+  </section>
+
+  <main>
+    <form>
+      <table class="input">
+        <h1>Entrada de produtos novos</h1>
+        <!--Nome do Funcionário-->
+        <tr>
+          <td class="alinharRotulos">Funcionário:</td>
+          <td><input id="txtNomeFuncionario" type="text" /></td>
+        </tr>
+        <!--Identificação do Funcionário-->
+        <tr>
+          <td class="alinharRotulos">ID de Registro:</td>
+          <td><input id="txtCodFuncionario" type="text" /></td>
+        </tr>
+        <!--Nome do produto-->
+        <tr>
+          <td class="alinharRotulos">Produto:</td>
+          <td><input id="txtNomeProduto" type="text" /></td>
+        </tr>
+        <!--Código do produto-->
+        <tr>
+          <td class="alinharRotulos">Código do produto:</td>
+          <td><input id="txtCodProduto" type="text" /></td>
+        </tr>
+        <!--Quantidade do produto-->
+        <tr>
+          <td class="alinharRotulos">Quantidade:</td>
+          <td>
+            <select id="qtidadeProduto">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+        </tr>
+        <!--Botoes-->
+        <tr>
+          <td colspan="2" align="center">
+            <input type="button" value="Cadastrar" class="alinhaBtns"
+              onclick="validarProduto('txtNomeFuncionario','txtCodFuncionario','txtNomeProduto','txtCodProduto','qtidadeProduto')" />
+            <input type="reset" value="Limpar" class="alinhaBtns" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </main>
+
+  <footer></footer>
+</body>
+
+</html>
